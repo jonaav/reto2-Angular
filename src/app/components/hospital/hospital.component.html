@@ -1,0 +1,46 @@
+<div class="hospital-container">
+
+  <app-hospital-search-form></app-hospital-search-form>
+
+  <div class="hospital-data-container container">
+    <div class="titulo-tabla">
+      <h2>Listado de hospitales</h2>
+    </div>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>NOMBRE</th>
+          <th>ANTIGUEDAD</th>
+          <th>AREA</th>
+          <th>DISTRITO</th>
+          <th>SEDE</th>
+          <th>GERENTE</th>
+          <th>CONDICION</th>
+          <th>FECHA DE REGISTRO</th>
+          <th>ACCION</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(hospital of hospitales; track hospital.idHospital){
+          <tr>
+            <td>{{hospital.idHospital}}</td>
+            <td>{{hospital.nombre}}</td>
+            <td>{{hospital.antiguedad}}</td>
+            <td>{{hospital.area}}</td>
+            <td>{{hospital.distrito}}</td>
+            <td>{{hospital.sede}}</td>
+            <td>{{hospital.gerente}}</td>
+            <td>{{hospital.condicion}}</td>
+            <td>{{hospital.fechaRegistro | date:'dd/MM/yyyy hh:mm a'}}</td>
+            <td>
+              <button class="btn btn-danger" (click)="delete(hospital.idHospital)">
+                Eliminar
+              </button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

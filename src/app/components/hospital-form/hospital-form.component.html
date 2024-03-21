@@ -1,0 +1,46 @@
+
+
+<div class="registrar-container">
+    <h2>{{title}}</h2>
+  <form class="registrar-form" [formGroup]="form" (ngSubmit)="save()">
+    <div class="form-group" *ngIf="flujo === 'update'">
+      <label for="idHospital">IdHospital</label>
+      <div class="input-group-idHospital">
+        <input type="number" id="idHospital" name="idHospital" placeholder="Ingrese el id" formControlName="idHospital" required>
+        <button class="btn btn-primary" type="button" (click)="searchById()">Buscar</button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Ingrese el nombre" formControlName="nombre" required>
+    </div>
+    <div class="form-group">
+      <label for="antiguedad">Antiguedad</label>
+      <input type="number" id="antiguedad" name="antiguedad" placeholder="0" formControlName="antiguedad" required>
+    </div>
+    <div class="form-group">
+      <label for="area">Area</label>
+      <input type="number" id="area" name="area" placeholder="0.0" formControlName="area" required>
+    </div>
+    <div class="form-group">
+      <label for="distrito">Distrito</label>
+      <input type="number" id="distrito" name="distrito" placeholder="Ingrese el distrito" formControlName="idDistrito" required>
+    </div>
+    <div class="form-group">
+      <label for="sede">Sede</label>
+      <input type="number" id="sede" name="sede" placeholder="Ingrese la sede" formControlName="idSede" required>
+    </div>
+    <div class="form-group">
+      <label for="gerente">Gerente</label>
+      <input type="number" id="gerente" name="gerente" placeholder="Ingrese la sede" formControlName="idGerente" required>
+    </div>
+    <div class="form-group">
+      <label for="condicion">Condicion</label>
+      <input type="number" id="condicion" name="condicion" placeholder="Ingrese la condicion" formControlName="idCondicion" required>
+    </div>
+    <div class="botones-form container">
+      <button class="btn btn-danger" type="button" routerLink="/home">Cancelar</button>
+      <button class="btn btn-primary" type="submit">Guardar</button>
+    </div>
+  </form>
+</div>

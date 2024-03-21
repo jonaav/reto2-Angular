@@ -1,0 +1,48 @@
+<div class="search-container container">
+  <h2>Busqueda de hospitales</h2>
+  <form class="search-form" [formGroup]="form" (ngSubmit)="searchBy()">
+    <div class="form-group">
+      <label for="sede">Sede</label>
+      <select id="sede" name="sede" formControlName="idSede" required>
+        <option value="">Seleccionar sede</option>
+        <option *ngFor="let s of sedes; trackBy: trackByIdSede" [value]="s.idSede">
+          {{ s.desSede }}
+        </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="distrito">Distrito</label>
+      <select id="distrito" name="distrito" formControlName="idDistrito" required>
+        <option value="">Seleccionar distrito</option>
+        <option *ngFor="let d of distritos; trackBy: trackByIdDistrito" [value]="d.idDistrito">
+          {{ d.desDistrito }}
+        </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="gerente">Gerente</label>
+      <select id="gerente" name="gerente" formControlName="idGerente" required>
+        <option value="">Seleccionar gerente</option>
+        <option *ngFor="let g of gerentes; trackBy: trackByIdGerente" [value]="g.idGerente">
+          {{ g.desGerente }}
+        </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="condicion">Condicion</label>
+      <select id="condicion" name="condicion" formControlName="idCondicion"required>
+        <option value="">Seleccionar condicion</option>
+        <option *ngFor="let c of condiciones; trackBy: trackByIdCondicion" [value]="c.idCondicion">
+          {{ c.desCondicion }}
+        </option>
+      </select>
+    </div>
+    <div class="form-group search-nombre">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre" formControlName="nombre" required>
+    </div>
+    <button class="btn btn-primary btn-buscar" type="submit">
+      Buscar
+    </button>
+  </form>
+</div>
